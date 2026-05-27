@@ -125,6 +125,10 @@ body{
 .contact textarea{resize:vertical;min-height:96px;}
 .submit{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border:none;height:54px;border-radius:999px;font-family:'Varela Round',sans-serif;font-weight:700;font-size:1.25rem;cursor:pointer;transition:all .2s;margin-top:.4rem;}
 .submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,110,.35);}
+.submit:disabled{opacity:.6;cursor:wait;transform:none;box-shadow:none;}
+.contact-error{font-family:'Varela Round',sans-serif;text-align:center;color:#b00020;font-size:1.1rem;margin-top:.7rem;}
+.contact-success{text-align:center;padding:1.5rem 1rem;}
+.contact-success p{font-family:'Suez One',serif;font-size:1.5rem;color:var(--primary-dark);max-width:480px;margin:0 auto;line-height:1.5;}
 .contact .direct{font-family:'Varela Round',sans-serif;text-align:center;margin-top:1.2rem;color:var(--primary);font-size:1.1rem;}
 .contact .direct a{color:var(--primary);text-decoration:none;font-weight:700;}
 
@@ -225,15 +229,19 @@ body{
   <div class="contact reveal">
     <h2>מעוניינים? נשמח לחזור אליכם</h2>
     <p class="sub">השאירו פרטים ויעל תיצור איתכם קשר</p>
-    <!-- TODO: החליפו את YOUR_FORM_ID במזהה Formspree אמיתי. צרו חשבון ב-formspree.io עם ynezer@gmail.com, צרו form חדש, והעתיקו את ה-ID מה-action URL שלו. עד שזה ייעשה, שליחה מהטופס לא תגיע לאיש. -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <!-- TODO: החליפו את YOUR_FORM_ID במזהה Formspree של ynezer@gmail.com. הוא משמש להתראת מייל בלבד. הנתונים נשמרים במקביל בטבלת leads ב-Supabase. -->
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <input type="text" name="name" placeholder="שם מלא" required>
       <input type="text" name="organization" placeholder="שם הארגון / המוסד (אם רלוונטי)">
       <input type="email" name="email" placeholder="דוא״ל" required>
       <input type="tel" name="phone" placeholder="טלפון">
       <textarea name="message" placeholder="מה תרצו לדעת? (לא חובה)"></textarea>
       <button type="submit" class="submit">שליחה ←</button>
+      <p class="contact-error" hidden role="alert"></p>
     </form>
+    <div class="contact-success" hidden>
+      <p>תודה! קיבלנו את הפנייה ויעל תיצור איתכם קשר בקרוב.</p>
+    </div>
     <p class="direct">או ישירות במייל: <a href="mailto:ynezer@gmail.com">ynezer@gmail.com</a></p>
   </div>
 
@@ -244,6 +252,71 @@ body{
 <script>
   const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+<script>
+  // Contact form: stores submission in Supabase (leads table) and sends email via Formspree in parallel.
+  (function(){
+    const SUPABASE_URL='https://ftqmiaywoantfbkiqfeq.supabase.co';
+    const SUPABASE_KEY='sb_publishable_S32YyB5AWQ2DtzHygCnddw_T6Xk-o7B';
+
+    const form=document.getElementById('contact-form');
+    if(!form)return;
+    const successEl=document.querySelector('.contact-success');
+    const errorEl=form.querySelector('.contact-error');
+    const submitBtn=form.querySelector('.submit');
+
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      errorEl.hidden=true;
+      submitBtn.disabled=true;
+      const originalText=submitBtn.textContent;
+      submitBtn.textContent='שולח...';
+
+      const fd=new FormData(form);
+      const payload={
+        name:(fd.get('name')||'').toString().trim(),
+        organization:(fd.get('organization')||'').toString().trim()||null,
+        email:(fd.get('email')||'').toString().trim(),
+        phone:(fd.get('phone')||'').toString().trim()||null,
+        message:(fd.get('message')||'').toString().trim()||null,
+      };
+
+      const supabasePromise=fetch(SUPABASE_URL+'/rest/v1/leads',{
+        method:'POST',
+        headers:{
+          'apikey':SUPABASE_KEY,
+          'Authorization':'Bearer '+SUPABASE_KEY,
+          'Content-Type':'application/json',
+          'Prefer':'return=minimal'
+        },
+        body:JSON.stringify(payload)
+      });
+
+      // Formspree is best-effort: email notification. Don't block success on it.
+      const formspreePromise=fetch(form.action,{
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:fd
+      }).catch(function(){return null;});
+
+      try{
+        const supaResp=await supabasePromise;
+        await formspreePromise;
+        if(!supaResp.ok){
+          throw new Error('Supabase responded '+supaResp.status);
+        }
+        form.hidden=true;
+        successEl.hidden=false;
+        successEl.scrollIntoView({behavior:'smooth',block:'center'});
+      }catch(err){
+        submitBtn.disabled=false;
+        submitBtn.textContent=originalText;
+        errorEl.textContent='משהו השתבש בשליחה. אנא נסו שוב, או שלחו מייל ישירות ל-ynezer@gmail.com';
+        errorEl.hidden=false;
+      }
+    });
+  })();
 </script>
 
 </body>
