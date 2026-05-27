@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>בינת הלב - Life Coding | יעל נזר</title>
+<meta name="description" content="בינת הלב - Life Coding. שיטה להתפתחות אישית שמשלבת עבודה תודעתית מבוססת מחקר עם כלי בינה מלאכותית. פיתחה: יעל נזר.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@300;400;600;700&family=Heebo:wght@300;400;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#2d7a6e;
+  --primary-dark:#1f5f55;
+  --primary-light:#4a9e90;
+  --gold:#c4a573;
+  --gold-light:#dcc8a0;
+  --gold-deep:#a9853f;
+  --cream:#f8f1e7;
+  --cream-deep:#ede0ce;
+  --cream-light:#fffdf9;
+  --text-dark:#3a281a;
+  --text-mid:#5a4233;
+  --text-light:#9a8574;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Assistant',sans-serif;
+  background-color:var(--cream);
+  color:var(--text-dark);
+  line-height:1.8;
+  font-size:1.4rem;
+  display:flex;flex-direction:column;min-height:100vh;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem;width:100%;}
+
+/* ===== GREEN BANNER ===== */
+.top-banner{background:linear-gradient(135deg,var(--primary),var(--primary-dark));text-align:center;padding:.9rem 1rem;box-shadow:0 4px 16px rgba(45,122,110,.25);}
+.top-banner span{font-family:'Suez One',serif;color:#fff;font-size:clamp(1.7rem,4vw,2.1rem);letter-spacing:.02em;}
+
+/* ===== HERO — classic framed ===== */
+.hero{background:linear-gradient(180deg,var(--cream-light),var(--cream));padding:2.5rem 1.5rem 1.5rem;}
+.hero-frame{
+  max-width:760px;margin:0 auto;
+  border:1px solid var(--gold);border-radius:4px;
+  padding:3rem 2rem 2.6rem;position:relative;
+}
+.hero-frame::before{
+  content:"✦";position:absolute;top:-.7rem;right:50%;transform:translateX(50%);
+  background:var(--cream-light);padding:0 1rem;color:var(--gold);font-size:1rem;
+}
+.hero-text{text-align:center;}
+.hero-author{font-family:'Heebo',sans-serif;font-size:1.5rem;font-weight:600;color:var(--primary);letter-spacing:.02em;margin-bottom:1.5rem;}
+.hero-logo{
+  position:relative;max-width:230px;margin:0 auto 1.8rem;aspect-ratio:1/1;
+  border-radius:50%;overflow:hidden;
+  background:linear-gradient(135deg,var(--cream-light),var(--cream-deep));
+  border:3px solid var(--gold-light);
+  box-shadow:0 16px 44px rgba(196,165,115,.28), inset 0 0 40px rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-logo::before{
+  content:"";position:absolute;width:124%;height:124%;
+  background:radial-gradient(circle,rgba(217,184,106,.4),transparent 68%);border-radius:50%;
+}
+.hero-logo img{position:relative;width:100%;height:100%;object-fit:cover;display:block;}
+.hero-logo .ph{position:relative;color:var(--primary);font-family:'Heebo',sans-serif;text-align:center;}
+.hero-logo .ph span{display:block;font-size:2.2rem;opacity:.55;margin-bottom:.3rem;}
+.hero-sub{font-family:'Suez One',serif;font-size:clamp(1.6rem,4vw,1.95rem);color:var(--primary-dark);font-weight:normal;line-height:1.4;margin-bottom:.7rem;}
+.hero-subline{width:120px;height:3px;background:linear-gradient(90deg,transparent,var(--primary),transparent);margin:0 auto 1.6rem;border-radius:2px;}
+.hero-divider{display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:1.6rem;}
+.hero-divider::before,.hero-divider::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.hero-divider span{color:var(--gold);letter-spacing:.3rem;font-size:.95rem;}
+.hero-hook{font-family:'Suez One',serif;font-size:clamp(1.7rem,4vw,2.1rem);color:var(--primary-dark);line-height:1.5;max-width:580px;margin:0 auto;}
+.hero-hook .accent{color:var(--primary);}
+
+/* ===== VIDEO ===== */
+.video-link-card{display:block;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;text-decoration:none;border-radius:1.25rem;padding:2.2rem 2rem;text-align:center;box-shadow:0 12px 30px rgba(45,122,110,.3);transition:all .3s ease;margin-bottom:2.5rem;overflow:hidden;}
+.video-link-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(45,122,110,.4);}
+.video-link-card video{width:100%;border-radius:.75rem;display:block;}
+.video-ph .icon{font-size:2.5rem;margin-bottom:.5rem;}
+.video-ph .t{font-family:'Varela Round',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:.3rem;}
+.video-ph .s{font-family:'Varela Round',sans-serif;font-size:1.15rem;opacity:.88;}
+
+/* ===== LINKS ===== */
+.links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.8rem;}
+.link-btn{font-family:'Varela Round',sans-serif;font-size:1.2rem;font-weight:700;text-decoration:none;padding:.85rem 2.1rem;border-radius:999px;transition:all .2s;min-height:52px;display:inline-flex;align-items:center;}
+.link-primary{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;box-shadow:0 4px 16px rgba(45,122,110,.25);}
+.link-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,110,.35);}
+.link-ghost{background:transparent;color:var(--primary);border:2px solid var(--primary);}
+.link-ghost:hover{background:var(--primary);color:#fff;transform:translateY(-2px);}
+
+/* ===== CARDS ===== */
+.card{background:var(--cream-light);border-radius:1.25rem;padding:2.5rem;margin-bottom:2rem;box-shadow:0 6px 28px rgba(100,65,30,.10);border-top:3px solid var(--primary);}
+.card p{font-family:'Varela Round',sans-serif;font-size:1.45rem;color:#2d2d2d;line-height:1.85;margin-bottom:1rem;}
+.card p:last-child{margin-bottom:0;}
+
+.section-heading{font-family:'Suez One',serif;font-size:2rem;color:var(--primary);font-weight:normal;text-align:center;margin-bottom:1.25rem;}
+.section-divider{height:1px;background:linear-gradient(90deg,var(--gold-light),transparent);opacity:.5;margin:0 0 2rem;}
+
+.innov{background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:1.25rem;padding:2.5rem;margin-bottom:2rem;box-shadow:0 12px 30px rgba(45,122,110,.3);}
+.innov h2{font-family:'Suez One',serif;font-size:2rem;color:#fff;font-weight:normal;margin-bottom:1rem;}
+.innov p{font-family:'Varela Round',sans-serif;font-size:1.4rem;color:#eaf4f1;line-height:1.85;margin-bottom:1rem;}
+.innov p:last-child{margin-bottom:0;}
+
+.step-card{background:#fff;border-radius:1rem;padding:1.5rem 1.75rem;border-right:5px solid var(--gold);box-shadow:0 4px 12px rgba(45,122,110,.06);margin-bottom:1rem;}
+.step-card-inner{display:flex;align-items:flex-start;gap:1rem;}
+.step-number{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;width:2.6rem;height:2.6rem;border-radius:50%;font-family:'Suez One',serif;font-size:1.3rem;flex-shrink:0;margin-top:.15rem;}
+.step-content h3{font-family:'Suez One',serif;font-size:1.5rem;color:var(--primary);font-weight:normal;margin-bottom:.5rem;}
+.step-content p{font-family:'Varela Round',sans-serif;font-size:1.3rem;color:#444;line-height:1.8;}
+
+.teachers{background:linear-gradient(135deg,var(--cream-light),var(--cream));border-radius:1.25rem;padding:2.5rem;margin-bottom:2rem;box-shadow:0 6px 28px rgba(100,65,30,.10);border-top:3px solid var(--gold);}
+.teachers .tag{display:inline-block;background:var(--gold);color:#fff;font-family:'Heebo',sans-serif;font-weight:600;font-size:.92rem;letter-spacing:.04em;padding:.3rem 1rem;border-radius:999px;margin-bottom:.9rem;}
+.teachers h2{font-family:'Suez One',serif;font-size:2rem;color:var(--primary);font-weight:normal;margin-bottom:1rem;}
+.teachers p{font-family:'Varela Round',sans-serif;font-size:1.45rem;color:#2d2d2d;line-height:1.85;}
+
+.contact{background:var(--cream-light);border-radius:1.25rem;padding:2.5rem;margin-bottom:1.5rem;box-shadow:0 6px 28px rgba(100,65,30,.10);border-top:3px solid var(--primary);}
+.contact h2{font-family:'Suez One',serif;font-size:2rem;color:var(--primary);font-weight:normal;text-align:center;margin-bottom:.3rem;}
+.contact .sub{font-family:'Varela Round',sans-serif;text-align:center;color:var(--primary);margin-bottom:1.5rem;font-size:1.25rem;}
+.contact form{display:flex;flex-direction:column;gap:.85rem;max-width:480px;margin:0 auto;}
+.contact input,.contact textarea{font-family:'Assistant',sans-serif;font-size:1.15rem;border:1.5px solid rgba(45,122,110,.3);border-radius:.8rem;padding:.8rem 1.1rem;background:#fff;color:var(--text-dark);transition:border-color .2s,box-shadow .2s;width:100%;}
+.contact input:focus,.contact textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(45,122,110,.12);}
+.contact textarea{resize:vertical;min-height:96px;}
+.submit{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border:none;height:54px;border-radius:999px;font-family:'Varela Round',sans-serif;font-weight:700;font-size:1.25rem;cursor:pointer;transition:all .2s;margin-top:.4rem;}
+.submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,110,.35);}
+.contact .direct{font-family:'Varela Round',sans-serif;text-align:center;margin-top:1.2rem;color:var(--primary);font-size:1.1rem;}
+.contact .direct a{color:var(--primary);text-decoration:none;font-weight:700;}
+
+.footer{text-align:center;padding:1.8rem 1rem;border-top:1.5px solid var(--gold-light);background:var(--cream-deep);margin-top:1.5rem;}
+.footer p{font-family:'Assistant',sans-serif;font-size:.95rem;color:var(--text-light);}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media(max-width:640px){
+  .card,.innov,.teachers,.contact{padding:1.9rem 1.4rem;}
+  .hero-frame{padding:2.2rem 1.2rem 2rem;}
+  .hero-logo{max-width:180px;}
+  .link-btn{width:100%;justify-content:center;}
+  .hero-divider::before,.hero-divider::after{width:45px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== GREEN BANNER ===== -->
+<div class="top-banner"><span>בינת הלב · Life Coding</span></div>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-frame">
+    <div class="hero-text">
+      <p class="hero-author">יעל נזר ✦ מפתחת השיטה</p>
+      <div class="hero-logo">
+        <img src="profile_png.png" alt="יעל נזר - בינת הלב Life Coding">
+      </div>
+      <p class="hero-sub">המקום בו תודעה פוגשת בינה מלאכותית</p>
+      <div class="hero-subline"></div>
+      <div class="hero-divider"><span>✦ ✦ ✦</span></div>
+      <p class="hero-hook">כשסצנה מסוימת חוזרת בחיים שוב ושוב, זו אינה תקלה. <span class="accent">זהו מסר שמבקש להתגלות.</span></p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- VIDEO -->
+  <a class="video-link-card" href="#" onclick="return false;">
+    <video controls playsinline preload="metadata"><source src="סרטון_תדמית.mp4" type="video/mp4">הדפדפן אינו תומך בווידאו.</video>
+  </a>
+
+  <!-- LINKS -->
+  <nav class="links">
+    <a class="link-primary link-btn" href="https://binat-halev-course.vercel.app/">על השיטה והקורס</a>
+    <a class="link-ghost link-btn" href="https://yaelnezer.github.io/binat-halev-about/">מי אני</a>
+    <a class="link-ghost link-btn" href="https://yaelnezer.github.io/binat-halev-syllabus-public/">סילבוס מלא</a>
+  </nav>
+
+  <!-- METHOD -->
+  <div class="card reveal">
+    <p>מה אם המילים שאנחנו אומרים לעצמנו, והסיפורים שאנחנו מספרים לעצמנו, הם הקוד שמעצב את חוויית המציאות שלנו?</p>
+    <p>בינת הלב - Life Coding היא שיטה להתפתחות אישית שמבוססת על גישות פסיכולוגיות מבוססות מחקר, בשילוב כלי בינה מלאכותית. היא מלמדת לזהות את הקוד הפנימי, לחקור אותו בחמלה, ולבחור במודע בקוד חדש המבוסס על ערכים, חזון וחופש. את השיטה פיתחתי מתוך החיבור בין שני התחומים שבהם אני מתמחה: העבודה התודעתית והבינה המלאכותית.</p>
+    <p>השם נולד מתוך המונח vibe coding, שטבע חוקר הבינה המלאכותית אנדריי קרפתי. בתכנות הזה אנחנו מתארים בשפה טבעית את הכוונה, נותנים את ה"ויב", והמערכת כותבת את הקוד. בחיים זה עובד באותו אופן: ה"ויב" הפנימי שלנו כותב את הקוד שמעצב את המציאות.</p>
+  </div>
+
+  <!-- INNOVATION -->
+  <h3 class="section-heading reveal">החידוש שבשיטה</h3>
+  <div class="section-divider"></div>
+  <div class="innov reveal">
+    <h2>תודעה פוגשת בינה מלאכותית</h2>
+    <p>לראשונה, כלי הבינה המלאכותית אינם רק טכנולוגיה, אלא מרחב אימון תודעתי זמין, מדויק וחומל. הם משמשים כמראה לתודעה וכעד שמחזיר לאדם את עצמו, בלי שיפוט.</p>
+    <p>הלמידה מתרחשת דרך שיעורים אינטראקטיביים ותחנות מסע מלוות. בסוף הדרך, כל אחד לומד לבנות לעצמו אפליקציה אישית, בלי שום צורך בידע מוקדם בכתיבת קוד, שתשמש אותו כעוגן יומיומי לשמירה על מודעות ורווחה.</p>
+  </div>
+
+  <!-- JOURNEY STEPS -->
+  <div class="step-card reveal">
+    <div class="step-card-inner">
+      <span class="step-number">1</span>
+      <div class="step-content"><h3>המצפן הפנימי</h3><p>זיהוי נקודת ההתחלה וחשיפת התסריט הקיים שמפעיל אותנו.</p></div>
+    </div>
+  </div>
+  <div class="step-card reveal">
+    <div class="step-card-inner">
+      <span class="step-number">2</span>
+      <div class="step-content"><h3>הכלים לשינוי</h3><p>קידוד מחדש של התודעה ורכישת מיומנויות חוסן.</p></div>
+    </div>
+  </div>
+  <div class="step-card reveal" style="margin-bottom:2rem;">
+    <div class="step-card-inner">
+      <span class="step-number">3</span>
+      <div class="step-content"><h3>הפקת העתיד</h3><p>יצירת מציאות, חזון, והטמעת מנטור דיגיטלי אישי.</p></div>
+    </div>
+  </div>
+
+  <!-- TEACHERS -->
+  <div class="teachers reveal">
+    <span class="tag">לצוותי חינוך</span>
+    <h2>השתלמות מוכרת לגמול</h2>
+    <p>עבודת ההוראה מחייבת אותנו לתת מעצמנו כל הזמן, להכיל את הרגשות של אחרים ולתפקד תחת עומס מתמשך. זו קרקע פורייה לשחיקה. הקורס נותן למורים כלים מעשיים מבוססי בינה מלאכותית לפיתוח חוסן אישי, ולבניית מערכת תמיכה אישית לרווחה נפשית.</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact reveal">
+    <h2>מעוניינים? נשמח לחזור אליכם</h2>
+    <p class="sub">השאירו פרטים ויעל תיצור איתכם קשר</p>
+    <!-- TODO: החליפו את YOUR_FORM_ID במזהה Formspree אמיתי. צרו חשבון ב-formspree.io עם ynezer@gmail.com, צרו form חדש, והעתיקו את ה-ID מה-action URL שלו. עד שזה ייעשה, שליחה מהטופס לא תגיע לאיש. -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="שם מלא" required>
+      <input type="text" name="organization" placeholder="שם הארגון / המוסד (אם רלוונטי)">
+      <input type="email" name="email" placeholder="דוא״ל" required>
+      <input type="tel" name="phone" placeholder="טלפון">
+      <textarea name="message" placeholder="מה תרצו לדעת? (לא חובה)"></textarea>
+      <button type="submit" class="submit">שליחה ←</button>
+    </form>
+    <p class="direct">או ישירות במייל: <a href="mailto:ynezer@gmail.com">ynezer@gmail.com</a></p>
+  </div>
+
+</div>
+
+<footer class="footer"><p>© יעל נזר 2026 · בינת הלב Life Coding</p></footer>
+
+<script>
+  const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
