@@ -43,7 +43,7 @@ body{
 /* ===== HERO — classic framed ===== */
 .hero{background:linear-gradient(180deg,var(--cream-light),var(--cream));padding:2.5rem 1.5rem 1.5rem;}
 .hero-frame{
-  max-width:760px;margin:0 auto;
+  max-width:860px;margin:0 auto;
   border:1px solid var(--gold);border-radius:4px;
   padding:3rem 2rem 2.6rem;position:relative;
 }
@@ -158,7 +158,9 @@ body{
     <div class="hero-text">
       <p class="hero-author">יעל נזר ✦ מפתחת השיטה</p>
       <div class="hero-logo">
-        <img src="profile_png.png" alt="יעל נזר - בינת הלב Life Coding">
+        <!-- CLAUDE_CODE: החליפו את ה-ph בתמונה profile_png.png -->
+        <!-- <img src="profile.png" alt="יעל נזר - בינת הלב Life Coding"> -->
+        <div class="ph"><span>◐</span>תמונת הפרופיל<br>(profile_png.png)</div>
       </div>
       <p class="hero-sub">המקום בו תודעה פוגשת בינה מלאכותית</p>
       <div class="hero-subline"></div>
@@ -172,12 +174,14 @@ body{
 
   <!-- VIDEO -->
   <a class="video-link-card" href="#" onclick="return false;">
-    <video controls playsinline preload="metadata"><source src="סרטון_תדמית.mp4" type="video/mp4">הדפדפן אינו תומך בווידאו.</video>
+    <!-- CLAUDE_CODE: החליפו את ה-video-ph בתג video של סרטון_תדמית.mp4 -->
+    <!-- <video controls playsinline preload="metadata"><source src="video.mp4" type="video/mp4">הדפדפן אינו תומך בווידאו.</video> -->
+    <div class="video-ph"><div class="icon">▶</div><p class="t">סרטון התדמית</p><p class="s">צפו במסע של בינת הלב</p></div>
   </a>
 
   <!-- LINKS -->
   <nav class="links">
-    <a class="link-primary link-btn" href="https://binat-halev-course.vercel.app/">על השיטה והקורס</a>
+    <a class="link-primary link-btn" href="./about-method.html">על השיטה</a>
     <a class="link-ghost link-btn" href="https://yaelnezer.github.io/binat-halev-about/">מי אני</a>
     <a class="link-ghost link-btn" href="https://yaelnezer.github.io/binat-halev-syllabus-public/">סילבוס מלא</a>
   </nav>

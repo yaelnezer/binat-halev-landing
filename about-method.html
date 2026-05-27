@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>על השיטה | בינת הלב - Life Coding</title>
+<meta name="description" content="בינת הלב - Life Coding. שיטה להתפתחות אישית שמשלבת עבודה תודעתית מבוססת מחקר עם כלי בינה מלאכותית.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@300;400;600;700&family=Heebo:wght@300;400;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#2d7a6e;
+  --primary-dark:#1f5f55;
+  --primary-light:#4a9e90;
+  --gold:#c4a573;
+  --gold-light:#dcc8a0;
+  --gold-deep:#a9853f;
+  --cream:#f8f1e7;
+  --cream-deep:#ede0ce;
+  --cream-light:#fffdf9;
+  --text-dark:#3a281a;
+  --text-mid:#5a4233;
+  --text-light:#9a8574;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Assistant',sans-serif;
+  background-color:var(--cream);
+  color:var(--text-dark);
+  line-height:1.8;
+  font-size:1.4rem;
+  display:flex;flex-direction:column;min-height:100vh;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem;width:100%;}
+
+/* GREEN BANNER + BACK */
+.top-banner{background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;position:relative;padding:.9rem 1rem;box-shadow:0 4px 16px rgba(45,122,110,.25);}
+.top-banner span{font-family:'Suez One',serif;color:#fff;font-size:clamp(1.4rem,4vw,1.9rem);letter-spacing:.02em;}
+.back-btn{position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);color:#fff;text-decoration:none;font-family:'Heebo',sans-serif;font-size:1rem;font-weight:600;padding:.4rem 1rem;border-radius:999px;transition:background .2s;border:1px solid rgba(255,255,255,.3);}
+.back-btn:hover{background:rgba(255,255,255,.28);}
+
+/* HERO */
+.hero{text-align:center;padding:2.5rem 1.5rem 1rem;}
+.hero h1{font-family:'Suez One',serif;font-size:clamp(2rem,5vw,2.8rem);color:var(--primary-dark);font-weight:normal;line-height:1.25;margin-bottom:.5rem;}
+.hero .sub{font-family:'Suez One',serif;font-size:clamp(1.3rem,3.5vw,1.7rem);color:var(--primary);font-weight:normal;margin-bottom:.8rem;}
+.hero .author{font-family:'Heebo',sans-serif;font-size:1.3rem;font-weight:600;color:var(--primary);}
+
+/* GOLD DIVIDER */
+.gold-divider{display:flex;align-items:center;justify-content:center;gap:1rem;padding:1.5rem 2rem;}
+.gold-divider::before,.gold-divider::after{content:'';height:1.5px;width:80px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.gold-divider span{color:var(--gold);font-size:1.1rem;letter-spacing:.3rem;}
+
+/* CARDS */
+.card{background:var(--cream-light);border-radius:1.25rem;padding:2.5rem;margin-bottom:2rem;box-shadow:0 6px 28px rgba(100,65,30,.10);border-top:3px solid var(--primary);}
+.card h2{font-family:'Suez One',serif;font-size:2rem;color:var(--primary-dark);font-weight:normal;margin-bottom:1rem;}
+.card p{font-family:'Varela Round',sans-serif;font-size:1.45rem;color:#2d2d2d;line-height:1.85;margin-bottom:1rem;}
+.card p:last-child{margin-bottom:0;}
+.card ul{list-style:none;padding:0;margin:.5rem 0 0;}
+.card li{position:relative;padding:.5rem 1.8rem .5rem 0;font-family:'Varela Round',sans-serif;font-size:1.4rem;color:#2d2d2d;line-height:1.8;}
+.card li::before{content:"✦";position:absolute;right:0;top:.6rem;color:var(--gold);font-size:1.1rem;}
+.card li .lead{font-family:'Heebo',sans-serif;font-weight:600;color:var(--primary-dark);}
+
+/* CTA */
+.cta-band{text-align:center;margin:1rem 0 2.5rem;}
+.cta-btn{display:inline-block;font-family:'Varela Round',sans-serif;font-size:1.3rem;font-weight:700;text-decoration:none;padding:1rem 2.6rem;border-radius:999px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;box-shadow:0 4px 16px rgba(45,122,110,.25);transition:all .2s;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,110,.35);}
+
+/* FOOTER */
+.footer{text-align:center;padding:1.8rem 1rem;border-top:1.5px solid var(--gold-light);background:var(--cream-deep);margin-top:auto;}
+.footer p{font-family:'Assistant',sans-serif;font-size:.95rem;color:var(--text-light);}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+@media(max-width:640px){
+  .card{padding:1.9rem 1.4rem;}
+  .back-btn{font-size:.85rem;padding:.35rem .8rem;right:.8rem;}
+  .gold-divider::before,.gold-divider::after{width:45px;}
+}
+</style>
+</head>
+<body>
+
+<!-- GREEN BANNER WITH BACK BUTTON -->
+<div class="top-banner">
+  <a class="back-btn" href="./index.html">→ חזרה</a>
+  <span>בינת הלב · Life Coding</span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>על השיטה</h1>
+  <p class="sub">מעבר מחיים של תגובה אוטומטית לחיים של בחירה מודעת</p>
+  <p class="author">יעל נזר ✦ מפתחת השיטה</p>
+</header>
+
+<div class="gold-divider"><span>✦ ✦ ✦</span></div>
+
+<div class="wrap">
+
+  <div class="card reveal">
+    <h2>הקריאה לשינוי</h2>
+    <p>רוב האנשים חיים את רוב חייהם על אוטומט. לא מתוך בחירה, אלא מתוך הרגל, פחד ודפוסים שנוצרו הרבה לפני שהיה להם שם. הם מרגישים תקועים באותן סצנות חוזרות במערכות יחסים, בעבודה או בביטוי עצמי, וחווים תחושה מתמשכת שמשהו חסר.</p>
+    <p>מה שרוב האנשים לא יודעים הוא שמופעי החיים אינם מקריים או מזל. הם השתקפות של הקוד הפנימי שפועל ברקע, וכל עוד הקוד הזה לא מזוהה ולא נחקר, הוא ימשיך לייצר את אותה מציאות. בינת הלב - Life Coding מיועד לכל מי שרוצה לקחת אחריות על מה שמשתקף בחייו, להכיר את הדפוסים שמעכבים ולהשתחרר מהם, לא ממקום של מאבק אלא ממקום של הבנה וחמלה.</p>
+  </div>
+
+  <div class="card reveal">
+    <h2>מהות השיטה: לשנות את הקוד הפנימי</h2>
+    <p>לכל אחד מאיתנו יש מערכת אמונות יסוד שנוצרה מוקדם בחיים. האמונות האלו פועלות ברקע התודעה באופן אוטומטי ומשמשות כמסנן שדרכו המוח בונה את המציאות.</p>
+    <p>את השיטה פיתחתי מתוך החיבור בין עבודה תודעתית לעולם הבינה המלאכותית, והשם Life Coding נולד מתוך המונח vibe coding, שטבע חוקר הבינה המלאכותית אנדריי קרפתי. בתכנות הזה אנחנו מתארים בשפה טבעית את הכוונה, נותנים את ה"ויב", והמערכת כותבת את הקוד. בחיים זה עובד באותו אופן: ה"ויב" הפנימי, האמונות והסיפורים שלנו, כותב את הקוד שמריץ את המציאות שאנחנו חווים. אם מילים יוצרות קוד בבינה מלאכותית, אולי הן כותבות גם את קוד החיים שלנו?</p>
+    <p>בינת הלב - Life Coding היא שיטה להתפתחות אישית המשלבת גישות פסיכולוגיות מבוססות מחקר (כמו שיטת העבודה של ביירון קייטי, תקשורת מקרבת, שיטת 12 הצעדים ו-ACT) בשילוב כלי בינה מלאכותית. המסע מאפשר לנו לזהות מה משתקף בחיים, לגלות את הקוד שמייצר זאת, ולבחור במודע בקוד חדש המבוסס על ערכים, חזון וחופש.</p>
+  </div>
+
+  <div class="card reveal">
+    <h2>תודעה פוגשת בינה מלאכותית: החידוש המרכזי</h2>
+    <p>לראשונה, כלי הבינה המלאכותית אינם משמשים רק לצרכים טכניים, אלא כמרחב אימון תודעתי זמין, מדויק וחומל. בשיטת בינת הלב, הבינה המלאכותית משמשת כמראה לתודעה וכעד חומל.</p>
+    <p>הלמידה מאפשרת לכם לרכוש ארגז כלים טכנולוגי ולבנות מערכת תמיכה אישית:</p>
+    <ul>
+      <li><span class="lead">ארגז כלים טכנולוגי ומעשי:</span> היכרות מעשית עם מודלי שפה לשיחה (Claude, Gemini, ChatGPT), ועם כלים נוספים (NotebookLM, Google Vids, Lovable).</li>
+      <li><span class="lead">מרחב Life Coding:</span> מרחב השראה הכולל מבחר של מודלי שיחה וכלי בינה מלאכותית לעבודה פנימית, לחקר, גילוי והעמקה בחקירת מחשבות שורש.</li>
+      <li><span class="lead">עוזר הבמאי האישי:</span> יצירת בוט או אפליקציה אישיים שישמשו כעוגן יומיומי לשמירה על הרגלים ומודעות. מרחב שאליו חוזרים כדי לערוך חשבון נפש, להתבונן בלי שיפוט, ולעבור מאדם שמגיב למציאות לאדם שיוצר אותה.</li>
+      <li><span class="lead">יצירת חזון ויזואלי:</span> שימוש בכלי ה-AI ליצירת תמונות ואנימציות כדי להפיק את "הטריילר לחיים החדשים" שלכם.</li>
+    </ul>
+  </div>
+
+  <div class="card reveal">
+    <h2>למי זה מיועד?</h2>
+    <p>השיטה פונה למי שמחפש כלים מעשיים ומעמיקים ליצירת מציאות:</p>
+    <ul>
+      <li>אנשים הנמצאים בתהליך התפתחות אישית, פסיכולוגית או רוחנית.</li>
+      <li>אנשי חינוך והוראה המבקשים כלים למניעת שחיקה וטיפוח חוסן אישי.</li>
+      <li>מנחים ומטפלים המעוניינים לשלב כלי בינה מלאכותית בעבודתם כמרחב אימון.</li>
+    </ul>
+  </div>
+
+  </div>
+
+<footer class="footer"><p>© יעל נזר 2026 · בינת הלב Life Coding</p></footer>
+
+<script>
+  const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
