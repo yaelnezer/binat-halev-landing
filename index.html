@@ -75,6 +75,7 @@ body{
 .hero-divider span{color:var(--gold);letter-spacing:.3rem;font-size:.95rem;}
 .hero-hook{font-family:'Suez One',serif;font-size:clamp(1.7rem,4vw,2.1rem);color:var(--primary-dark);line-height:1.5;max-width:580px;margin:0 auto;}
 .hero-hook .accent{color:var(--primary);}
+.hero-note{font-family:'Varela Round',sans-serif;font-size:1.2rem;color:var(--text-mid);line-height:1.7;max-width:480px;margin:1.2rem auto 0;}
 
 /* ===== VIDEO ===== */
 .video-link-card{display:block;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;text-decoration:none;border-radius:1.25rem;padding:2.2rem 2rem;text-align:center;box-shadow:0 12px 30px rgba(45,122,110,.3);transition:all .3s ease;margin-bottom:2.5rem;overflow:hidden;}
@@ -96,6 +97,9 @@ body{
 .card{background:var(--cream-light);border-radius:1.25rem;padding:2.5rem;margin-bottom:2rem;box-shadow:0 6px 28px rgba(100,65,30,.10);border-top:3px solid var(--primary);}
 .card p{font-family:'Varela Round',sans-serif;font-size:1.45rem;color:#2d2d2d;line-height:1.85;margin-bottom:1rem;}
 .card p:last-child{margin-bottom:0;}
+.card .benefit{font-family:'Varela Round',sans-serif;font-weight:600;color:var(--primary-dark);background:rgba(196,165,115,.12);border-right:4px solid var(--gold);padding:1.1rem 1.3rem;border-radius:0 .8rem .8rem 0;}
+.card .scene-line{font-family:'Suez One',serif;font-size:clamp(1.4rem,2.6vw,1.7rem);color:var(--primary-dark);line-height:1.5;margin-bottom:1.3rem;}
+.card .scene-line .accent{color:var(--primary);}
 
 .section-heading{font-family:'Suez One',serif;font-size:2rem;color:var(--primary);font-weight:normal;text-align:center;margin-bottom:1.25rem;}
 .section-divider{height:1px;background:linear-gradient(90deg,var(--gold-light),transparent);opacity:.5;margin:0 0 2rem;}
@@ -104,6 +108,14 @@ body{
 .innov h2{font-family:'Suez One',serif;font-size:2rem;color:#fff;font-weight:normal;margin-bottom:1rem;}
 .innov p{font-family:'Varela Round',sans-serif;font-size:1.4rem;color:#eaf4f1;line-height:1.85;margin-bottom:1rem;}
 .innov p:last-child{margin-bottom:0;}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem 1.5rem;margin-bottom:1.5rem;}
+.tool{display:flex;align-items:flex-start;gap:.7rem;}
+.tool .ic{font-size:1.5rem;flex-shrink:0;line-height:1.3;}
+.tool .tn{font-family:'Heebo',sans-serif;font-weight:700;color:#fff;font-size:1.25rem;}
+.tool .tu{font-family:'Heebo',sans-serif;color:#cfe6e0;font-size:1.2rem;line-height:1.4;}
+@media(max-width:560px){.tool-grid{grid-template-columns:1fr;}}
+.innov-btn{display:inline-block;margin-top:1.4rem;background:var(--cream-light);color:var(--primary-dark);font-family:'Varela Round',sans-serif;font-weight:700;font-size:1.2rem;text-decoration:none;padding:.8rem 2rem;border-radius:999px;transition:all .2s;}
+.innov-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.18);}
 
 .step-card{background:#fff;border-radius:1rem;padding:1.5rem 1.75rem;border-right:5px solid var(--gold);box-shadow:0 4px 12px rgba(45,122,110,.06);margin-bottom:1rem;}
 .step-card-inner{display:flex;align-items:flex-start;gap:1rem;}
@@ -163,7 +175,8 @@ body{
       <p class="hero-sub">המקום בו תודעה פוגשת בינה מלאכותית</p>
       <div class="hero-subline"></div>
       <div class="hero-divider"><span>✦ ✦ ✦</span></div>
-      <p class="hero-hook">כשסצנה מסוימת חוזרת בחיים שוב ושוב, זו אינה תקלה. <span class="accent">זהו מסר שמבקש להתגלות.</span></p>
+      <p class="hero-hook">מתמודדים עם עומס ושחיקה?<br>רוצים להכיר כלי בינה מלאכותית?</p>
+      <p class="hero-note">בקורס בינת הלב - Life Coding נלמד להכיר כלי בינה מלאכותית מובילים, ככלי לבחירה מודעת וליצירת מציאות.</p>
     </div>
   </div>
 </header>
@@ -177,8 +190,7 @@ body{
 
   <!-- LINKS -->
   <nav class="links">
-    <a class="link-primary link-btn" href="./about-method.html">על השיטה</a>
-    <a class="link-ghost link-btn" href="https://yaelnezer.github.io/binat-halev-about/">מי אני</a>
+    <a class="link-primary link-btn" href="https://yaelnezer.github.io/binat-halev-about/">מי אני</a>
     <a class="link-ghost link-btn" href="https://yaelnezer.github.io/binat-halev-syllabus-public/">סילבוס מלא</a>
   </nav>
 
@@ -186,36 +198,23 @@ body{
   <div class="card reveal">
     <p>מה אם המילים שאנחנו אומרים לעצמנו, והסיפורים שאנחנו מספרים לעצמנו, הם הקוד שמעצב את חוויית המציאות שלנו?</p>
     <p>בינת הלב - Life Coding היא שיטה להתפתחות אישית שמבוססת על גישות פסיכולוגיות מבוססות מחקר, בשילוב כלי בינה מלאכותית. היא מלמדת לזהות את הקוד הפנימי, לחקור אותו בחמלה, ולבחור במודע בקוד חדש המבוסס על ערכים, חזון וחופש. את השיטה פיתחתי מתוך החיבור בין שני התחומים שבהם אני מתמחה: העבודה התודעתית והבינה המלאכותית.</p>
-    <p>השם נולד מתוך המונח vibe coding, שטבע חוקר הבינה המלאכותית אנדריי קרפתי. בתכנות הזה אנחנו מתארים בשפה טבעית את הכוונה, נותנים את ה"ויב", והמערכת כותבת את הקוד. בחיים זה עובד באותו אופן: ה"ויב" הפנימי שלנו כותב את הקוד שמעצב את המציאות.</p>
+    <p class="benefit">בקורס רוכשים שליטה אמיתית בכלי הבינה המלאכותית המובילים, ולומדים להשתמש בהם כדי להפוך רעיונות למציאות, ליצור בקלות, ולבנות מערכת תמיכה אישית שמלווה אתכם בחיים.</p>
   </div>
 
-  <!-- INNOVATION -->
-  <h3 class="section-heading reveal">החידוש שבשיטה</h3>
-  <div class="section-divider"></div>
+  <!-- AI TOOLS -->
   <div class="innov reveal">
     <h2>תודעה פוגשת בינה מלאכותית</h2>
-    <p>לראשונה, כלי הבינה המלאכותית אינם רק טכנולוגיה, אלא מרחב אימון תודעתי זמין, מדויק וחומל. הם משמשים כמראה לתודעה וכעד שמחזיר לאדם את עצמו, בלי שיפוט.</p>
-    <p>הלמידה מתרחשת דרך שיעורים אינטראקטיביים ותחנות מסע מלוות. בסוף הדרך, כל אחד לומד לבנות לעצמו אפליקציה אישית, בלי שום צורך בידע מוקדם בכתיבת קוד, שתשמש אותו כעוגן יומיומי לשמירה על מודעות ורווחה.</p>
-  </div>
-
-  <!-- JOURNEY STEPS -->
-  <div class="step-card reveal">
-    <div class="step-card-inner">
-      <span class="step-number">1</span>
-      <div class="step-content"><h3>המצפן הפנימי</h3><p>זיהוי נקודת ההתחלה וחשיפת התסריט הקיים שמפעיל אותנו.</p></div>
+    <p>הבינה המלאכותית משנה את הדרך שבה אנחנו עובדים, יוצרים וחושבים. השאלה אינה אם לפגוש אותה, אלא איך.</p>
+    <p>הקורס משלב למידה של כלי בינה מלאכותית מתקדמים בשילוב עבודה תודעתית. נכיר ונעבוד בפועל עם מגוון רחב של כלים:</p>
+    <div class="tool-grid">
+      <div class="tool"><span class="ic">✍️</span><div><div class="tn">ChatGPT, Claude, Gemini</div><div class="tu">לחשיבה, יצירה וכתיבה</div></div></div>
+      <div class="tool"><span class="ic">📚</span><div><div class="tn">NotebookLM</div><div class="tu">ללמידה וסיכום ידע</div></div></div>
+      <div class="tool"><span class="ic">🎨</span><div><div class="tn">Canva AI</div><div class="tu">לעיצוב ותוכן חזותי</div></div></div>
+      <div class="tool"><span class="ic">🎬</span><div><div class="tn">Google Vids</div><div class="tu">ליצירת סרטונים</div></div></div>
+      <div class="tool"><span class="ic">💻</span><div><div class="tn">Lovable</div><div class="tu">ליצירת אפליקציות ומרחבים דיגיטליים</div></div></div>
+      <div class="tool"><span class="ic">🤖</span><div><div class="tn">בוטים ועוזרים אישיים</div><div class="tu">לייעול העבודה והחיים</div></div></div>
     </div>
-  </div>
-  <div class="step-card reveal">
-    <div class="step-card-inner">
-      <span class="step-number">2</span>
-      <div class="step-content"><h3>הכלים לשינוי</h3><p>קידוד מחדש של התודעה ורכישת מיומנויות חוסן.</p></div>
-    </div>
-  </div>
-  <div class="step-card reveal" style="margin-bottom:2rem;">
-    <div class="step-card-inner">
-      <span class="step-number">3</span>
-      <div class="step-content"><h3>הפקת העתיד</h3><p>יצירת מציאות, חזון, והטמעת מנטור דיגיטלי אישי.</p></div>
-    </div>
+    <p>הכלים משמשים גם כמרחב אימון תודעתי, וגם ככלי יצירה מעשי. לאורך הדרך תרכשו את היכולת להפוך רעיונות למציאות ולבנות אפליקציה אישית, בלי ידע מוקדם בכתיבת קוד.</p>
   </div>
 
   <!-- TEACHERS -->
