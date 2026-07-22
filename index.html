@@ -38,6 +38,7 @@
 .nv-links a{flex:none;font-family:'Heebo',sans-serif;font-weight:600;font-size:15px;color:var(--primary-dark);padding:8px 15px;border-radius:999px;white-space:nowrap;transition:background .16s ease,color .16s ease;text-decoration:none}
 .nv-links a:hover{background:var(--primary);color:var(--cream-light)}
 .nv-burger{display:none}
+.hero-logo{display:block; width:100%; max-width:640px; height:auto; margin:8px auto 40px; position:relative; z-index:1;}
 @media (max-width:719px){
   .nv-in{justify-content:space-between}
   .nv-brand{display:block}
@@ -45,6 +46,7 @@
   .nv-links{position:absolute;top:100%;right:0;left:0;flex-direction:column;flex-wrap:nowrap;align-items:stretch;background:rgba(248,241,231,.98);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--gold-light);padding:8px 12px 12px;gap:2px;display:none;box-shadow:0 16px 30px -20px rgba(58,40,26,.4)}
   .nv-links.open{display:flex}
   .nv-links a{text-align:center;padding:12px 15px;font-size:16px}
+  .hero-logo{width:calc(100% + 48px); max-width:none; margin:-88px -24px 40px;}
 }
 
 .hov1:hover{background: var(--primary); color: var(--cream-light);}
@@ -72,12 +74,12 @@
 
   <!-- ===== HERO ===== -->
   <header id="top" style="position: relative; padding: 88px 24px 96px; text-align: center; background: radial-gradient(120% 90% at 50% 0%, var(--cream-light) 0%, var(--cream) 55%, var(--cream-deep) 100%); overflow: hidden;">
-    <img src="hero-banner.png" alt="בינת הלב · Life Coding" style="display:block; width: calc(100% + 48px); max-width: none; height: auto; margin: -88px -24px 40px; position: relative; z-index: 1;">
+    <img src="hero-banner.png" alt="בינת הלב · Life Coding" class="hero-logo">
     <svg viewBox="0 0 60 90" width="72" height="108" style="position:absolute; top:420px; right:6%; opacity:.5; transform: rotate(18deg);" aria-hidden="true"><path d="M30 2C10 20 4 46 30 88 56 46 50 20 30 2Z" fill="none" stroke="var(--gold)" stroke-width="1.4"></path><path d="M30 10V80" stroke="var(--gold)" stroke-width="1.2"></path><path d="M30 30 44 22M30 44 48 38M30 30 16 22M30 44 12 38M30 58 44 52M30 58 16 52" stroke="var(--gold)" stroke-width="1"></path></svg>
 
     <div style="max-width: 860px; margin: 0 auto; position: relative;">
       <h1 style="font-family: 'Suez One', serif; font-weight: 400; font-size: clamp(36px, 6.5vw, 62px); line-height: 1.2; color: var(--primary-dark); margin: 0 0 24px; text-wrap: balance;">המקום שבו תודעה פוגשת<br>בינה מלאכותית</h1>
-      <div style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: clamp(18px,2.3vw,22px); line-height: 1.7; color: var(--primary); margin: 0 auto 34px; max-width: 640px; text-align: center; text-wrap: balance;">יעל נזר, MEd <span style="color: var(--gold);">✦</span> מנטורית להתפתחות אישית ומומחית ב<span style="white-space:nowrap">טכנו-פדגוגיה</span> ובינה מלאכותית<br>מפתחת שיטת בינת הלב - Life Coding</div>
+      <div style="font-family: 'Heebo', sans-serif; font-weight: 700; font-size: clamp(15px,3.7vw,22px); line-height: 1.7; color: var(--primary); margin: 0 auto 34px; max-width: 640px; text-align: center; text-wrap: balance;">יעל נזר, MEd <span style="color: var(--gold);">✦</span> מנטורית להתפתחות אישית ומומחית ב<span style="white-space:nowrap">טכנו-פדגוגיה</span> ובינה מלאכותית<br>מפתחת שיטת בינת הלב - Life Coding</div>
       <p style="font-family: 'Assistant', sans-serif; font-weight: 700; font-size: clamp(19px, 2.6vw, 22px); line-height: 1.75; color: var(--text-dark); max-width: 660px; margin: 0 auto 20px;">הבינה המלאכותית משנה את העולם. השאלה היא איך אנחנו בוחרים לפגוש את השינוי הזה, מתוך סקרנות או מתוך חשש?</p>
       <p style="font-family: 'Assistant', sans-serif; font-weight: 700; font-size: clamp(18px, 2.3vw, 20px); line-height: 1.8; color: var(--text-dark); max-width: 660px; margin: 0 auto 16px;">בקורס נעבוד בפועל עם הכלים המתקדמים שקיימים היום, ונשתמש בהם בשני מישורים: כמרחב אימון תודעתי, וככלי יצירה מעשי.</p>
       <p style="font-family: 'Assistant', sans-serif; font-weight: 700; font-size: clamp(18px, 2.3vw, 20px); line-height: 1.8; color: var(--text-dark); max-width: 640px; margin: 0 auto 40px;">נבנה אפליקציה אישית שמותאמת ל-DNA שלכם, ועוזר במאי שממשיך ללוות אתכם בשגרה, גם אחרי שהקורס נגמר.</p>
@@ -472,7 +474,7 @@
       </div>
       <div style="width:46px; height:2px; background: var(--gold); margin: 0 auto 24px;"></div>
       <h2 style="font-family:'Suez One',serif; font-weight:400; font-size: clamp(30px, 4.6vw, 42px); color: var(--primary-dark); margin: 0 0 16px;">מי אני</h2>
-      <div style="font-family:'Heebo',sans-serif; font-weight:600; font-size: clamp(9px, 2.4vw, 18px); line-height:1.6; color: var(--primary); margin: 0 auto 30px; white-space: nowrap;">יעל נזר, MEd <span style="color:var(--gold);">✦</span> מנטורית להתפתחות אישית ומומחית בטכנו-פדגוגיה ובינה מלאכותית</div>
+      <div style="font-family:'Heebo',sans-serif; font-weight:600; font-size: clamp(14px, 3.4vw, 18px); line-height:1.6; color: var(--primary); margin: 0 auto 30px;">יעל נזר, MEd <span style="color:var(--gold);">✦</span> מנטורית להתפתחות אישית ומומחית בטכנו-פדגוגיה ובינה מלאכותית</div>
       <p style="font-family:'Varela Round',sans-serif; font-size: 19px; line-height: 1.9; color: var(--text-mid); margin: 0 0 22px; text-align: start;">אני יעל נזר, מפתחת שיטת Life Coding, בינת הלב. למעלה מ-35 שנה אני עוסקת בחינוך, בפדגוגיה דיגיטלית ובהתפתחות אישית. לקחתי את שני התחומים שאני מתמחה בהם, העבודה התודעתית והבינה המלאכותית, וחיברתי אותם לשיטה אחת.</p>
       <p style="font-family:'Varela Round',sans-serif; font-size: 19px; line-height: 1.9; color: var(--text-mid); margin: 0 0 34px; text-align: start;">הוסמכתי בשיטת העבודה של ביירון קייטי, ב-NLP ובתקשורת מקרבת. אני מכירה לעומק את שיטת 12 הצעדים, את גישת ACT ואת האינטליגנציה החיובית, ומשלבת אותן בתהליכים שאני מנחה. הבסיס המדעי לעבודה מגיע ממחקרי הנוירופלסטיות, שמראים שהמוח גמיש ושאפשר לבנות בו נתיבים חדשים.</p>
       <p style="font-family:'Suez One',serif; font-size: clamp(21px,3vw,26px); line-height: 1.5; color: var(--primary); margin: 0 0 16px; text-wrap: balance;">מה שאנחנו יוצרים בתוך הלב, מוצא בסופו של דבר את דרכו אל העולם.</p>
