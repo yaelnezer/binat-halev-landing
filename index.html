@@ -536,6 +536,17 @@ img{max-width:100%;display:block;}
   .nv-links a,.nv-try{font-size:.8rem;padding:.14rem .45rem;}
   .nv-links{gap:.15rem;}
 }
+.hook-q{font-family:var(--f-label);font-weight:700;font-size:clamp(1.15rem,2.6vw,1.5rem);color:var(--primary-dark);line-height:1.7;max-width:640px;margin:0 auto 1.8rem;text-wrap:balance;}
+@media (max-width:600px){.logo-banner img{width:min(290px,76vw);margin-top:.2rem;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);}.hero .deco{display:none;}}
+.hero-author-top{margin-bottom:1.6rem;}
+.logo-tag{display:none;}
+@media (max-width:600px){.logo-tag{display:block;font-family:var(--f-label);font-weight:700;font-size:1.15rem;line-height:1.5;color:var(--primary);text-align:center;max-width:22rem;margin:-.4rem auto 0;padding:0 1rem .4rem;text-wrap:balance;}}
+.try-label{font-family:var(--f-head);font-weight:400;font-size:clamp(1.75rem,4vw,2.2rem);color:var(--primary-dark);line-height:1.3;text-align:center;margin:0 auto .8rem;}
+@media (max-width:600px){.try-btns{flex-wrap:nowrap;gap:.6rem!important;}.try-btns .btn{flex:1 1 0;justify-content:center;text-align:center;padding:.85rem .7rem;font-size:1.15rem;line-height:1.35;}}
+.yael-intro{font-family:var(--f-head);font-weight:400;font-size:clamp(1.6rem,3vw,1.9rem);color:var(--primary-dark);line-height:1.5;margin:0 auto .4rem;}
+.yael-body{font-family:var(--f-body);font-size:clamp(1.2rem,2.4vw,1.35rem);color:var(--text-dark);line-height:1.8;max-width:660px;margin:0 auto .8rem;text-wrap:balance;}
+.yael-three{font-family:var(--f-head);font-weight:400;font-size:clamp(1.5rem,3.2vw,1.9rem);color:var(--primary-dark);line-height:1.45;margin:0 auto 1rem;}
+.yael-close{font-family:var(--f-label);font-weight:700;font-size:clamp(1.15rem,2.6vw,1.4rem);color:var(--primary);margin:0 auto 2.2rem;}
 </style>
 </head>
 <body>
@@ -564,7 +575,11 @@ img{max-width:100%;display:block;}
 
 <!-- ===== HERO ===== -->
 <header id="top" class="logo-banner">
-  <img src="hero-banner.png" alt="בינת הלב · Life Coding">
+  <picture>
+    <source media="(max-width:600px)" srcset="hero-banner-mobile.png">
+    <img src="hero-banner.png" alt="בינת הלב · Life Coding">
+  </picture>
+  <p class="logo-tag">שיטה להתפתחות אישית שמשלבת תודעה וכלי בינה מלאכותית</p>
 </header>
 
 <section class="hero">
@@ -574,30 +589,30 @@ img{max-width:100%;display:block;}
     <!-- כותרות קודמות, שמורות לשחזור:
          מקורית: <h1>הבינה המלאכותית כבר כאן.<br>בואו נהפוך אותה לשותפה לחיים מתוך משמעות ובחירה.</h1>
          אופציה ב (נזהה/נכתוב/נרכוש): <h1>בינת הלב - Life Coding<br>לזהות את הדפוסים שמנהלים את חיינו, לכתוב מחדש את תסריט החיים, ולרכוש שליטה בכלי הבינה המלאכותית.</h1>
-         אופציה ג: <h1>בינת הלב - Life Coding<br>מעבר מחיים של תגובה אוטומטית לחיים של בחירה מודעת</h1> -->
-    <p class="byline"><span aria-hidden="true">✦</span> יעל נזר, מפתחת השיטה</p>
-    <h1 class="hook">אותו ריב, אותה תחושה בעבודה, <span class="hook-key">אותה סצנה חוזרת שוב ושוב?</span></h1>
+         אופציה ג: <h1>בינת הלב - Life Coding<br>מעבר מחיים של תגובה אוטומטית לחיים של בחירה מודעת</h1>
+         משפט ההבטחה הקודם: בשיטת בינת הלב - Life Coding מתחברים אל החכם הפנימי שבתוכנו, ויוצרים את מציאות חיינו מתוך בחירה והגשמה, בעזרת כלי הבינה המלאכותית המתקדמים ביותר.
+         אוקטובר 2026: <h1 class="hook">אותו ריב, אותה תחושה בעבודה, <span class="hook-key">אותה סצנה חוזרת שוב ושוב?</span></h1> -->
+    <!-- שורת חתימה קודמת: <p class="byline">✦ יעל נזר, מפתחת השיטה</p> -->
+    <div class="hero-author hero-author-top">יעל נזר, MEd <span style="color:var(--gold);">✦</span> מפתחת שיטת <span style="white-space:nowrap;">בינת הלב - Life Coding</span></div>
+    <h1 class="hook">מי מנהל את החיים שלנו?<br><span class="hook-key">אנחנו, או הקוד שפועל בתוכנו?</span></h1>
+    <p class="hook-q">ומה אם דווקא ברגע האמת היו לכם כלים אישיים, זמינים ומדויקים?</p>
 
-    <p class="hero-promise">בשיטת בינת הלב - Life Coding מתחברים אל החכם הפנימי שבתוכנו, ויוצרים את מציאות חיינו מתוך בחירה והגשמה, בעזרת כלי הבינה המלאכותית המתקדמים ביותר.</p>
 
-    <div class="hero-author">יעל נזר, MEd <span style="color:var(--gold);">✦</span> מפתחת שיטת <span style="white-space:nowrap;">בינת הלב - Life Coding</span><br>המקום שבו תודעה פוגשת בינה מלאכותית.</div>
+    <!-- שורה שירדה מהמסגרת: המקום שבו תודעה פוגשת בינה מלאכותית. -->
 
     <!-- הסרטון הפותח -->
     <div class="hero-video">
       <video src="opening.mp4" autoplay muted loop controls playsinline preload="metadata"></video>
     </div>
 
+    <p class="yael-intro">הכירו את בינת הלב - Life Coding.</p>
+    <p class="yael-close" style="margin-bottom:1.6rem;font-size:clamp(1.6rem,3vw,1.9rem);line-height:1.45;">המקום שבו תודעה פוגשת בינה מלאכותית.</p>
+
     <!-- כרטיס הפתיחה -->
     <div class="hero-intro">
-      <p>בינת הלב - Life Coding היא שיטה חדשנית להתפתחות אישית, שנולדה בנקודת המפגש בין גישות תודעתיות מבוססות מחקר לבין כלי הבינה המלאכותית המתקדמים היום.</p>
-      <p>הבינה המלאכותית משמשת כמראה לתודעה, מרחב חקירה זמין ושותף ליצירה. יחד, אנחנו הופכים עבודה פנימית לפרקטיקה, ובונים ארגז כלים אישי ויישומי שנשאר לאורך זמן.</p>
+      <p>הבינה המלאכותית משמשת <b>כמראה לתודעה</b>, מרחב חקירה זמין ושותף ליצירה. בתהליך כל אחד בונה לעצמו <b>אפליקציה אישית</b>, לשמירת המטרות ולמעקב אחר ההתקדמות. כלי הבינה המלאכותית שבשיטה מלווים אותו בחיי היומיום, ועוזרים לו <b>לעצור, לווסת את הרגש ולבחור תגובות חדשות</b>.</p>
     </div>
 
-    <div class="btns">
-      <a href="#" data-id="tracks" onclick="go(event)" class="btn btn-fill">לבחירת המסלול שלכם</a>
-      <a href="https://wa.me/972548023823?text=%D7%94%D7%99%D7%99%20%D7%99%D7%A2%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" class="btn btn-fill" target="_blank" rel="noopener">יש לכם שאלות? בואו נדבר</a>
-      <a href="mapat-hayesodot.html" class="btn btn-fill">גלו את מפת היסודות שלכם</a>
-    </div>
   </div>
 </section>
 
@@ -609,6 +624,32 @@ img{max-width:100%;display:block;}
       <video id="tVid" src="testimonials.mp4" poster="testimonials-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
       <button type="button" class="sound" id="tSound"><span aria-hidden="true">🔊</span> הפעילו קול</button>
     </div>
+  </div>
+</section>
+
+<!-- ===== כפתורי פעולה, אחרי סרטון ההמלצות ===== -->
+<section class="sec sec-cream" style="padding-top:.5rem;padding-bottom:1rem;">
+  <div class="narrow" style="text-align:center;">
+    <div class="btns" style="margin-top:0;">
+      <a href="#" data-id="tracks" onclick="go(event)" class="btn btn-fill">לבחירת המסלול שלכם</a>
+      <a href="https://wa.me/972548023823?text=%D7%94%D7%99%D7%99%20%D7%99%D7%A2%D7%9C%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" class="btn btn-fill" target="_blank" rel="noopener">יש לכם שאלות? בואו נדבר</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== הכלים בקורס ===== -->
+<section class="innov">
+  <div class="reveal">
+    <h2>בשיטה עובדים בפועל עם הכלים המתקדמים שקיימים היום, ומשתמשים בהם כמרחב אימון תודעתי וככלי יצירה מעשי.</h2>
+    <div class="tools">
+      <div class="tool"><span class="em">✍️</span><div><div class="tn">ChatGPT, Claude, Gemini</div><div class="tu">לשיח ולחקירת מחשבות שורש</div></div></div>
+      <div class="tool"><span class="em">📚</span><div><div class="tn">NotebookLM</div><div class="tu">ללמידה ולהעמקה</div></div></div>
+      <div class="tool"><span class="em">🎨</span><div><div class="tn">מחוללי תמונות</div><div class="tu">למפת הבמאי ולסטוריבורד</div></div></div>
+      <div class="tool"><span class="em">🎬</span><div><div class="tn">Canva</div><div class="tu">להפקת הטריילר האישי</div></div></div>
+      <div class="tool"><span class="em">💻</span><div><div class="tn">Lovable</div><div class="tu">לבניית אפליקציה אישית</div></div></div>
+      <div class="tool"><span class="em">🤖</span><div><div class="tn">בוטים אישיים</div><div class="tu">כעוגן יומיומי</div></div></div>
+    </div>
+    <p class="note">ללא צורך בידע מוקדם בתכנות.</p>
   </div>
 </section>
 
@@ -642,26 +683,14 @@ img{max-width:100%;display:block;}
   </div>
 </section>
 
-<!-- ===== הכלים בקורס ===== -->
-<section class="innov">
-  <div class="reveal">
-    <h2>בשיטה עובדים בפועל עם הכלים המתקדמים שקיימים היום, ומשתמשים בהם כמרחב אימון תודעתי וככלי יצירה מעשי.</h2>
-    <div class="tools">
-      <div class="tool"><span class="em">✍️</span><div><div class="tn">ChatGPT, Claude, Gemini</div><div class="tu">לשיח ולחקירת מחשבות שורש</div></div></div>
-      <div class="tool"><span class="em">📚</span><div><div class="tn">NotebookLM</div><div class="tu">ללמידה ולהעמקה</div></div></div>
-      <div class="tool"><span class="em">🎨</span><div><div class="tn">מחוללי תמונות</div><div class="tu">למפת הבמאי ולסטוריבורד</div></div></div>
-      <div class="tool"><span class="em">🎬</span><div><div class="tn">Canva</div><div class="tu">להפקת הטריילר האישי</div></div></div>
-      <div class="tool"><span class="em">💻</span><div><div class="tn">Lovable</div><div class="tu">לבניית אפליקציה אישית</div></div></div>
-      <div class="tool"><span class="em">🤖</span><div><div class="tn">בוטים אישיים</div><div class="tu">כעוגן יומיומי</div></div></div>
-    </div>
-    <p class="note">ללא צורך בידע מוקדם בתכנות.</p>
-  </div>
-</section>
-
 <!-- ===== התנסות: נעים להכיר ===== -->
 <section class="sec sec-cream" style="padding-top:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--gold-light);">
-  <div class="narrow" style="text-align:center;">
-    <a href="hozkot-hashem.html" class="btn btn-fill">גלו את חוזקות השם שלכם</a>
+  <div class="narrow">
+    <p class="try-label">מוזמנים להתנסות</p>
+    <div class="btns try-btns" style="margin:0;gap:1rem;">
+      <a href="mapat-hayesodot.html" class="btn btn-fill">גלו את מפת היסודות שלכם</a>
+      <a href="hozkot-hashem.html" class="btn btn-fill">גלו את חוזקות השם שלכם</a>
+    </div>
   </div>
 </section>
 
