@@ -502,8 +502,8 @@ img{max-width:100%;display:block;}
 
 /* ===== להתנסות בתפריט ===== */
 .nv-try{font-family:var(--f-label);font-weight:700;font-size:1rem;line-height:1.5;padding:.28rem .85rem;border-radius:999px;border:1px solid var(--primary);
-  background:var(--primary);color:var(--cream-light);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:.3rem;flex:none;}
-.nv-try:hover,.nv-try[aria-expanded="true"]{background:var(--primary-dark);}
+  background:rgba(255,253,249,.7);color:var(--primary-dark);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:.3rem;flex:none;}
+.nv-try:hover,.nv-try[aria-expanded="true"]{background:rgba(45,122,110,.1);color:var(--primary-dark);}
 .nv-try .car{font-size:.75em;transition:transform .2s;}
 .nv-try[aria-expanded="true"] .car{transform:rotate(180deg);}
 .nv-panel{position:absolute;top:calc(100% + .45rem);right:0;width:min(330px,calc(100vw - 1.5rem));background:var(--cream-light);border:1px solid var(--primary);
@@ -610,7 +610,7 @@ img{max-width:100%;display:block;}
 
     <!-- כרטיס הפתיחה -->
     <div class="hero-intro">
-      <p>הבינה המלאכותית משמשת <b>כמראה לתודעה</b>, מרחב חקירה זמין ושותף ליצירה. בתהליך כל אחד בונה לעצמו <b>אפליקציה אישית</b>, לשמירת המטרות ולמעקב אחר ההתקדמות. כלי הבינה המלאכותית שבשיטה מלווים אותו בחיי היומיום, ועוזרים לו <b>לעצור, לווסת את הרגש ולבחור תגובות חדשות</b>.</p>
+      <p>הבינה המלאכותית משמשת <b>כמראה לתודעה</b>, מרחב חקירה זמין ושותף ליצירה. בתהליך תבנו לעצמכם <b>אפליקציה אישית</b>, לשמירת המטרות ולמעקב אחר ההתקדמות. כלי הבינה המלאכותית שבשיטה ילוו אתכם בחיי היומיום, ויעזרו לכם <b>לעצור, לווסת את הרגש ולבחור תגובות חדשות</b>.</p>
     </div>
 
   </div>
@@ -1114,8 +1114,8 @@ function scrollToForm(e){if(e)e.preventDefault();var el=document.getElementById(
   var links=Array.prototype.slice.call(document.querySelectorAll('.nv-links a'));
   var secs=links.map(function(a){return document.getElementById(a.getAttribute('data-id'));});
   var upd=function(){
-    var y=window.scrollY+90, best=0;
-    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) best=i; });
+    var y=window.scrollY+document.querySelector('.nv').offsetHeight+40, best=0, bestTop=-1;
+    secs.forEach(function(s,i){ if(s && s.offsetTop<=y && s.offsetTop>bestTop){ best=i; bestTop=s.offsetTop; } });
     links.forEach(function(a,i){ a.classList.toggle('active', i===best); });
     var act=links[best];
     if(act && act.parentNode.scrollWidth>act.parentNode.clientWidth){
