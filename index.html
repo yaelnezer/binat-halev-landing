@@ -547,6 +547,19 @@ img{max-width:100%;display:block;}
 .yael-body{font-family:var(--f-body);font-size:clamp(1.2rem,2.4vw,1.35rem);color:var(--text-dark);line-height:1.8;max-width:660px;margin:0 auto .8rem;text-wrap:balance;}
 .yael-three{font-family:var(--f-head);font-weight:400;font-size:clamp(1.5rem,3.2vw,1.9rem);color:var(--primary-dark);line-height:1.45;margin:0 auto 1rem;}
 .yael-close{font-family:var(--f-label);font-weight:700;font-size:clamp(1.15rem,2.6vw,1.4rem);color:var(--primary);margin:0 auto 2.2rem;}
+/* ===== עדכון 24 באוקטובר 2026: ראש הדף, ריווח, תפריט ו"לתפריט" בטלפון ===== */
+.hero{padding-top:1.6rem;padding-bottom:.6rem;}
+.hero .hero-intro{margin-bottom:1.4rem;}
+@media (max-width:820px){.hero{padding-top:.8rem;}}
+@media (max-width:600px){
+  .nv-links [data-id="method"]{order:1;}
+  .nv-links [data-id="about"]{order:2;}
+  .nv-links [data-id="testimonials"]{order:3;}
+  .nv-links [data-id="tracks"]{order:4;}
+  .nv-try{order:5;}
+  .totop{font-size:1rem;width:auto;height:44px;padding:0 1rem;gap:.35rem;border-radius:999px;}
+  .totop span{font-size:1.15rem;}
+}
 </style>
 </head>
 <body>
@@ -556,13 +569,13 @@ img{max-width:100%;display:block;}
   <div class="nv-in">
     <div class="nv-links" id="navLinks">
       <a href="#" data-id="top" onclick="go(event)" class="nv-desk">בית</a>
-      <a href="#" data-id="audience" onclick="go(event)" class="nv-desk">קהל יעד</a>
+      <a href="#" data-id="method" onclick="go(event)">השיטה</a>
+      <a href="#" data-id="about" onclick="go(event)">מי אני</a>
       <a href="#" data-id="testimonials" onclick="go(event)">המלצות</a>
       <a href="#" data-id="tracks" onclick="go(event)">מסלולים</a>
-      <a href="#" data-id="method" onclick="go(event)">השיטה</a>
       <button type="button" class="nv-try" id="nvTry" aria-expanded="false" aria-controls="nvTryPanel">להתנסות <span class="car" aria-hidden="true">▾</span></button>
+      <a href="#" data-id="audience" onclick="go(event)" class="nv-desk">קהל יעד</a>
       <a href="#" data-id="faq" onclick="go(event)" class="nv-desk">שאלות</a>
-      <a href="#" data-id="about" onclick="go(event)">מי אני</a>
       <a href="#" data-id="contact" onclick="go(event)" class="nv-desk">צרו קשר</a>
     </div>
     <div class="nv-panel" id="nvTryPanel" hidden>
@@ -593,9 +606,8 @@ img{max-width:100%;display:block;}
          משפט ההבטחה הקודם: בשיטת בינת הלב - Life Coding מתחברים אל החכם הפנימי שבתוכנו, ויוצרים את מציאות חיינו מתוך בחירה והגשמה, בעזרת כלי הבינה המלאכותית המתקדמים ביותר.
          אוקטובר 2026: <h1 class="hook">אותו ריב, אותה תחושה בעבודה, <span class="hook-key">אותה סצנה חוזרת שוב ושוב?</span></h1> -->
     <!-- שורת חתימה קודמת: <p class="byline">✦ יעל נזר, מפתחת השיטה</p> -->
+    <h1 class="hook">חיים בסרט שלא אתם בחרתם?<br>הגיע הזמן לשבת בכיסא הבמאי ולכתוב את התסריט מחדש.</h1>
     <div class="hero-author hero-author-top">יעל נזר, MEd <span style="color:var(--gold);">✦</span> מפתחת שיטת <span style="white-space:nowrap;">בינת הלב - Life Coding</span></div>
-    <h1 class="hook">מי מנהל את החיים שלנו?<br><span class="hook-key">אנחנו, או הקוד שפועל בתוכנו?</span></h1>
-    <p class="hook-q">ומה אם דווקא ברגע האמת היו לכם כלים אישיים, זמינים ומדויקים?</p>
 
 
     <!-- שורה שירדה מהמסגרת: המקום שבו תודעה פוגשת בינה מלאכותית. -->
@@ -610,7 +622,7 @@ img{max-width:100%;display:block;}
 
     <!-- כרטיס הפתיחה -->
     <div class="hero-intro">
-      <p>הבינה המלאכותית משמשת <b>כמראה לתודעה</b>, מרחב חקירה זמין ושותף ליצירה. בתהליך תבנו לעצמכם <b>אפליקציה אישית</b>, לשמירת המטרות ולמעקב אחר ההתקדמות. כלי הבינה המלאכותית שבשיטה ילוו אתכם בחיי היומיום, ויעזרו לכם <b>לעצור, לווסת את הרגש ולבחור תגובות חדשות</b>.</p>
+      <p>בתהליך הלמידה תזהו את הדפוסים שמנהלים אתכם ותכתבו את התסריט שלכם מחדש. כלי הבינה המלאכותית ישמשו אתכם <b>כמראה לתודעה</b>, ויישארו איתכם ביומיום, זמינים בכל רגע, כדי <b>לעצור, לווסת את הרגש ולבחור תגובות חדשות</b>.</p>
     </div>
 
   </div>
